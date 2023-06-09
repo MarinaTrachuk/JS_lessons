@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Task 6</title>
+	</head>
+	<body>
+		<h1 class="body__title">Задача № 6</h1> 
+		<p class="body__condition">
+			З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. 
+			Обчислити вартість кожного товару окремо та загальну вартість. 
+			Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+		</p>
+		<script>
+		// Вводимо необхідні данні:
+			let costOfBread = parseFloat(prompt('Введіть вартість хліба','0'))
+			let amountOfBread = parseInt(prompt('Введіть кількість хліба','0'))
+			let costOfSausage = parseFloat(prompt('Введіть вартість ковбаси','0'))
+			let amountOfSausage = parseInt(prompt('Введіть кількість ковбаси','0'))
+			let costOfWater = parseFloat(prompt('Введіть вартість пляшки води','0'))
+			let amountOfWater = parseInt(prompt('Введіть кількість пляшок води','0'))
+		//Знаходимо результат:
+			let totalCostOfBread = costOfBread * amountOfBread
+			let totalCostOfSausage = costOfSausage * amountOfSausage
+			let totalCostOfWater = costOfWater * amountOfWater
+			let totalCost = totalCostOfBread + totalCostOfSausage + totalCostOfWater
+		//Виводимо результат:
+			document.write(`
+			<h2>Товарний чек</h2>
+			<table border="2px">
+				<tr>
+					<th>Найменування товару</th>
+					<th>Ціна, грн</th>
+					<th>Кількість, шт</th>
+					<th>Вартість, грн</th>
+				</tr>
+				<tr>
+					<th>Хліб</th>
+					<th>${costOfBread}</th>
+					<th>${amountOfBread}</th>
+					<th>${totalCostOfBread}</th>
+				</tr>
+				<tr>
+					<th>Ковбаса</th>
+					<th>${costOfSausage}</th>
+					<th>${amountOfSausage}</th>
+					<th>${totalCostOfSausage}</th>
+				</tr>
+				<tr>
+					<th>Вода</th>
+					<th>${costOfWater}</th>
+					<th>${amountOfWater}</th>
+					<th>${totalCostOfWater}</th>
+				</tr>
+				<tr>
+					<th colspan="3">Загальна вартість покупки, грн</th>
+					<th>${totalCost}</th>
+				</tr>
+			</table>
+			`)
+		</script>
+	</body>
+</html>
