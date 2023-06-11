@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Task 2</title>
+	</head>
+	<body>
+		<h1 class="body__title">Задача № 2</h1> 
+		<p class="body__condition">
+			З клавіатури вводиться ціна товару і кількість грошей. 
+			Якщо грошей не вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, 
+			то пропонуємо купити лотерею за 4 грн.
+		</p>
+		<script>
+		// Вводимо необхідні данні:
+			let priceOfTheProduct = parseFloat(prompt('Введіть ціну товару','0'))
+			let amountOfMoney = parseFloat(prompt('Введіть кількісь грошей','0'))
+			const lotteryTicket = 4
+		//Знаходимо результат:
+			let remainder = Math.round((amountOfMoney - priceOfTheProduct)*100)/100
+			if (amountOfMoney < priceOfTheProduct)
+				alert(`Не достатньо коштів для здійснення покупки`)
+			else if (amountOfMoney > priceOfTheProduct){
+				if (remainder >= lotteryTicket){
+					if (confirm(`Ваша решта складає ${remainder} грн, пропонуємо придбати лотерейний білет за 4 грн`))
+						alert(`Бажаємо успіху!`)
+					else
+						alert(`Дуже шкода...`)
+					}
+				alert(`Дякуємо за покупку!`)
+			}
+		</script>
+	</body>
+</html>

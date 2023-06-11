@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Additional Task 2</title>
+	</head>
+	<body>
+		<h1 class="body__title">Додаткова задача № 2</h1> 
+		<p class="body__condition">
+			З клавіатури вводиться розмір заробітної плати та розмір прожиткового мінімуму. 
+			Визначити розмір соціальної допомоги (ввжаємо, що заробітна плата є меншою).
+		</p>
+		<script>
+		// Для визначення розміру соціальної допомоги, необхідно порівняти заробітну плату з розміром прожиткового мінімуму. 
+		// Якщо заробітна плата менша за розмір прожиткового мінімуму, то особа має право на соціальну допомогу. 
+		// Розмір соціальної допомоги визначається як різниця між розміром прожиткового мінімуму та заробітною платою.
+		// Вводимо необхідні данні:
+			let wages = parseFloat(prompt('Введіть розмір заробітної плати','0'))
+			let subsistenceMin = parseFloat(prompt('Введіть розмір прожиткового мінімуму','0'))
+		//Знаходимо результат:
+			let difference = subsistenceMin - wages
+		//Виводимо результат:
+			if(wages >= subsistenceMin){
+				document.write(`
+				Соціальна допомога не передбачена так як розмір заробітної плати перевищує або дорівнює розміру прожиткового мінімуму.
+			`)
+			} else{
+				document.write(`
+				Розмір соціальної допомоги складає: ${difference} грн
+			`)
+			}
+		</script>
+	</body>
+</html>

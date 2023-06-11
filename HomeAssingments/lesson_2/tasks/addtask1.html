@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Additional Task 1</title>
+	</head>
+	<body>
+		<h1 class="body__title">Додаткова задача № 1</h1> 
+		<p class="body__condition">
+			Дано ширину екрана та кількість елементів, які повинні бути відображені у рядку. 
+			Визначити ширину елементів, які повинні бути відображені у цьому рядку. 
+		</p>
+		<script>
+		// Вводимо необхідні данні:
+			let screenWidth = parseInt(prompt('Введіть ширину екрану','0'))
+			let numberOfElements = parseInt(prompt('Введіть кількість елементів','0'))
+		//Знаходимо результат:
+			let elementWidth = screenWidth / numberOfElements
+		//Виводимо результат:
+			document.write(`
+			Ширина елементів, які повинні бути відображені: ${elementWidth} px
+			`)
+		</script>
+	</body>
+</html>
