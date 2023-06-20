@@ -21,14 +21,16 @@
 			let secondChildName = prompt('Введіть ім"я другої дитини')
 			let numberOfSweetsForTheSecondChild = parseInt(prompt('Введіть кількість цукерок у другої дитини','0'))
 		//Знаходимо результат:
+			let result
 			if (numberOfSweetsForTheFirstChild > numberOfSweetsForTheSecondChild)
-				document.write(`Більше цукерок у ${firstChildName}`)
+				result = (`Більше цукерок у ${firstChildName}`)
 			else if (numberOfSweetsForTheFirstChild < numberOfSweetsForTheSecondChild)
-				document.write(`Більше цукерок у ${secondChildName}`)
+				result = (`Більше цукерок у ${secondChildName}`)
 			else if (numberOfSweetsForTheFirstChild === numberOfSweetsForTheSecondChild)
-				document.write(`У дітей однакова кількість цукерок`)
+				result = (`У дітей однакова кількість цукерок`)
 			else if (!Number(numberOfSweetsForTheFirstChild,numberOfSweetsForTheSecondChild) )
-				document.write(`Не коректно введена кількість цукерок`)
+				result = (`Не коректно введена кількість цукерок`)
+			document.write (result)
 		</script>
 	</body>
 </html>

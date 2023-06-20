@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link rel="stylesheet" href="../reset.css"> -->
+		<link rel="stylesheet" href="../style.css">
+		<title>Task 13</title>
+	</head>
+	<body>
+		<h1 class="body__title">Задача № 13</h1> 
+		<p class="body__condition">
+			Морський бій. 
+			Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. 
+			Маючи К снарядів користувач намагається потопити корабель. 
+		</p>
+		<script>
+			let N = parseInt(prompt("Введіть ширину поля"))
+			let M = parseInt(prompt("Введіть довжину поля"))
+			let K = parseInt(prompt("Введіть кількість снарядів"))
+			const randomLocationX = 1 + Math.floor(Math.random()*(N-1+1));
+			const randomLocationY = 1 + Math.floor(Math.random()*(M-1+1));
+			for (let shot = K; shot >= 1 ; shot--) {
+				alert(`У Вас ${shot} снарядів`)
+				let X = parseInt(prompt("Введіть координату Х пострілу"))
+				let Y = parseInt(prompt("Введіть координату У пострілу"))
+				if(randomLocationX === X && randomLocationY === Y){
+					alert("Влучний постріл!Вітаю!")
+					break
+				} else 
+					alert("Ви не влучили!")
+			}
+				alert("Гра завершена")
+		</script>
+	</body>
+</html>
