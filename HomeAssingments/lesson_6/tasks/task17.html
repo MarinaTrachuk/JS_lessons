@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Task 17</title>
+	</head>
+	<body>
+		<h1 class="body__title">Задача № 17</h1> 
+		<p class="body__condition">
+			У комп’ютер вводяться по черзі дані про зріст N учнів класу. 
+			Визначити середній зріст учнів класу.
+		</p>
+		<script>
+			//Користувач вводить кількість учнів
+			let numberOfStudents = parseInt(prompt("Введіть кількість учнів"))
+			//Загальний зріст всіх учнів
+			let totalHeight = 0
+			//Середній зріст
+			let averageHeight = 0
+			//Розв'язання
+			for (let i = 0; i < numberOfStudents; i++) {
+				let heightOfStudents = parseInt(prompt(`Введіть зріст учня ${i+1}`))
+				totalHeight += heightOfStudents
+			}
+			averageHeight = Math.round(totalHeight / numberOfStudents)
+			document.write(`Середній зріст учнів ${averageHeight} см`)
+		</script>
+	</body>
+</html>

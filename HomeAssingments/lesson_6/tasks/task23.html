@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Task 23</title>
+	</head>
+	<body>
+		<h1 class="body__title">Задача № 23</h1> 
+		<p class="body__condition">
+			Дано натуральні числа від 20 до 50. 
+			Надрукувати ті з них, які діляться на 3, але не діляться на 5.
+		</p>
+		<script>
+			for (let i = 20; i <= 50; i++) {
+				if (i % 3 === 0 && i % 5 !== 0) {
+					document.write(`${i}, `)
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Task 16</title>
+	</head>
+	<body>
+		<h1 class="body__title">Задача № 16</h1> 
+		<p class="body__condition">
+			У бригаді, що працює на сінокосі, є N сінокосарок. 
+			Перша сінокосарка працювала m годин, а кожна наступна на 10 хв більше, ніж попередня. 
+			Скільки годин працювала вся бригада?
+		</p>
+		<script>
+			//Ввести кількість сінокосарок
+			let N = parseInt(prompt("Введіть кількість сінокосарок"))
+			//Час роботи першої сінокосарки
+			let m = parseInt(prompt("Введіть час роботи першої сінокосарки"))
+			//Розрахунок
+			m = m * 60
+			let hours = 0
+			let totalTime = 0
+				for (let i = 0; i < N; i++) {
+					hours = m + 10*i
+					totalTime += hours 
+				}
+			totalTime = totalTime / 60
+			document.write(`Загальний час роботи бригади ${totalTime} годин`)
+		</script>
+	</body>
+</html>

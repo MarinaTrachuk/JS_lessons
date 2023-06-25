@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Task 7</title>
+	</head>
+	<body>
+		<h1 class="body__title">Задача № 7</h1> 
+		<p class="body__condition">
+			Інвестор вклав S тис. грн на 20 років під 20% річних, 
+			а потім на 17 років під 27% річних. 
+			Визначити за допомогою циклів суму, яку він одержить.
+		</p>
+		<script>
+			//Користувач вводить суму вкладу
+			let depositAmount = parseFloat(prompt("Введіть суму яку хочете вкласти"))
+			//Відсоток річних
+			let annualPercentage1 = 20
+			let annualPercentage2 = 27
+			//Загальна сума
+			let amountReceived1 = 0
+			let amountReceived2 = 0
+			//Загальна сума відсотків
+			let totalAmountOfInterest1 = 0
+			let totalAmountOfInterest2 = 0
+// -------------------------------------------------------------------------------------
+			// Розрахунок суми після 20 років під 20% річних
+			for (let numberOfYears = 1; numberOfYears <= 20; numberOfYears++) {
+				totalAmountOfInterest1 += depositAmount*annualPercentage1/100
+			}
+			amountReceived1 = depositAmount + totalAmountOfInterest1
+			// Розрахунок суми після 17 років під 27% річних
+			for (let numberOfYears = 1; numberOfYears <= 17; numberOfYears++) {
+				totalAmountOfInterest2 += depositAmount*annualPercentage2/100
+			}
+			amountReceived2 = depositAmount + totalAmountOfInterest2
+// -------------------------------------------------------------------------------------
+			//Виводимо результат
+			document.write(`При внесенні суми ${depositAmount} грн. на 20 років під ${annualPercentage1}%, 
+								інвестор отримає ${amountReceived1} грн. Потім на 17 років під ${annualPercentage2}%, інвестор отримає 
+								${amountReceived2} грн.`)
+		</script>
+	</body>
+</html>
