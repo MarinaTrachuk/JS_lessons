@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../reset.css">
+		<link rel="stylesheet" href="../style.css">
+		<title>Task 1</title>
+	</head>
+	<body>
+		<h1 class="body__title">Задача № 1</h1> 
+		<p class="body__condition">
+			Створити функцію, яка за номером місяця повертає його назву.
+		</p>
+		<script>
+			function getMonthName(month) {
+				let nameOfMonth
+					switch (month) {
+						case "1": 
+							nameOfMonth = "Січень"
+						break;
+						case "2": 
+							nameOfMonth = "Лютий"
+						break;
+						case "3": 
+							nameOfMonth = "Березень"
+						break;
+						case "4": 
+							nameOfMonth = "Квітень"
+						break;
+						case "5": 
+							nameOfMonth = "Травень"
+						break;
+						case "6": 
+							nameOfMonth = "Червень"
+						break;
+						case "7":
+							nameOfMonth = "Липень"
+						break;
+						case "8": 
+							nameOfMonth = "Серпень"
+						break;
+						case "9": 
+							nameOfMonth = "Вересень"
+						break;
+						case "10": 
+							nameOfMonth = "Жовтень"
+						break;
+						case "11": 
+							nameOfMonth = "Листопад"
+						break;
+						case "12": 
+							nameOfMonth = "Грудень"
+						break;
+					}
+					return nameOfMonth
+			}
+			const monthResult = prompt("Введіть номер місяця")
+			alert(getMonthName(monthResult))
+		</script>
+	</body>
+</html>

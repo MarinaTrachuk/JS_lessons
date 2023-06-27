@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../reset.css">
+		<link rel="stylesheet" href="../style.css">
+		<title>Task 3</title>
+	</head>
+	<body>
+		<h1 class="body__title">Задача № 3</h1> 
+		<br class="body__condition">
+		Створити окремі функції, які для 4 чисел знаходять:<br>
+				1)суму;<br>
+				2)добуток;<br>
+				3)середнє арифметичне;<br>
+				4)мінімальне значення. 
+		</p></br>
+		<script>
+			function getSum(num1,num2,num3,num4) {
+				return num1 + num2 + num3 + num4
+			}
+
+			function getMultiplication(num1,num2,num3,num4) {
+				return num1 * num2 * num3 * num4
+			}
+
+			function getArithmeticMean(num1,num2,num3,num4) {
+				const arithmeticMeanCount = 4
+				return (num1 + num2 + num3 + num4) / arithmeticMeanCount
+			}
+
+			function getMinimumValue(num1,num2,num3,num4) {
+				return Math.min(num1,num2,num3,num4)
+			}
+			
+			const num1 = parseFloat(prompt("Введіть перше число"))
+			const num2 = parseFloat(prompt("Введіть друге число"))
+			const num3 = parseFloat(prompt("Введіть третє число"))
+			const num4 = parseFloat(prompt("Введіть четверте число"))
+
+			document.write(`Сума дорівнює: ${(getSum(num1,num2,num3,num4))}<br>`)
+			document.write(`Добуток дорівнює: ${(getMultiplication(num1,num2,num3,num4))}<br>`)
+			document.write(`Середнє арифметичне дорівнює: ${(getArithmeticMean(num1,num2,num3,num4))}<br>`)
+			document.write(`Мінімальне значення дорівнює: ${(getMinimumValue(num1,num2,num3,num4))}<br>`)
+		</script>
+	</body>
+</html>

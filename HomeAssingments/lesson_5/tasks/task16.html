@@ -17,11 +17,11 @@
 		<script>
 			//Загальна величина прибутку
 			let totalProfit = 0
-			let profitPerWeek = 0
 			//Користувач вводить кількість тижнів
 			let numberOfWeeks = parseInt(prompt("Введіть кількість тижнів"))
 			// Для кожного тижня N
 			for (let week = 1; week <= numberOfWeeks; week++){
+				let profitPerWeek = 0
 				//Для кожного дня від 1 до 7
 				for (let day = 1; day <= 7; day++) {
 					let profitPerDay = parseFloat(prompt(`Тиждень ${week} день ${day}`))

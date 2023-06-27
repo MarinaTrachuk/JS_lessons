@@ -20,16 +20,14 @@
 			//Середньорічна температура
 			let averageTemperature = 0
 			//Кількість температур
-			let countTemperature = 0
-			for(let month = 1; month <=12; month++){
+			let countTemperature = 12
+			for(let month = 1; month <=countTemperature; month++){
 				// Температура за місяць
 				const temperatureIndicator = parseInt(prompt(`Введіть температуру за ${month} місяць`));
 				// Розраховуємо загальну річну температуру
 				generalTemperature += temperatureIndicator
-				// Розраховуємо середньорічну температуру
-				countTemperature++
-				averageTemperature = Math.round(generalTemperature / countTemperature)
 			}
+			averageTemperature = Math.round(generalTemperature / countTemperature)
 			document.write(`Середньорічна температура складає ${averageTemperature} градусів`)
 		</script>
 	</body>
