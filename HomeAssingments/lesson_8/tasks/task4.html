@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../reset.css">
+		<link rel="stylesheet" href="../style.css">
+		<title>Task 4</title>
+	</head>
+	<body style="padding: 30px;">
+		<h1 class="body__title">Задача № 4</h1> 
+		<p class="body__condition" style="margin-bottom: 50px;">
+			Дано послідовність оцінок учня. Підрахувати кількість:<br>
+			1)	двійок<br>
+			2)	кількість хороших оцінок (добре, відмінно);<br>
+			3)	кількість оцінок, які нижче середнього.<br>
+		</p>
+		<script>
+			let studentEvaluations = [2,5,3,4,5,5,2,4,3,4,3,5]
+
+			function getNumberOfDeuces(studentEvaluations) {
+				let scoreTwo = 0
+				let goodMarks = 0
+				let scoreIsBelowAverage = 0
+				for (let i = 0; i < studentEvaluations.length; i++) {
+					if(studentEvaluations[i] === 2)
+						scoreTwo++
+					else if(studentEvaluations[i] === 4 || studentEvaluations[i] ===5)
+						goodMarks++
+					else
+					scoreIsBelowAverage++
+				} 
+				return [scoreTwo,goodMarks,scoreIsBelowAverage]
+			}
+
+			let resultScores = getNumberOfDeuces(studentEvaluations)
+
+			document.write(`Кількість двійок: ${resultScores[0]}<br>`)
+			document.write(`Кількість хороших оцінок: ${resultScores[1]}<br>`)
+			document.write(`Кількість оцінок нижче середнього: ${resultScores[2]}<br>`)
+		</script>
+	</body>
+</html>
