@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../reset.css">
+		<link rel="stylesheet" href="../style.css">
+		<title>Task 2</title>
+	</head>
+	<body style="padding: 30px;">
+		<h1 class="body__title">Задача № 2</h1> 
+		<p class="body__condition" style="margin-bottom: 50px;">
+			Дано масив елементів. Знайти добуток додатних елементів
+		</p>
+		<script>
+			let arr = [20,50,39,-40,35,10,34, -657]
+			let result = 1
+			
+			for (const element of arr) {
+				if(element >= 0)
+				result *= element
+			}
+			document.write(result)
+		</script>
+	</body>
+</html>

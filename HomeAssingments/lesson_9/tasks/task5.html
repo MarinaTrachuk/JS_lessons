@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../reset.css">
+		<link rel="stylesheet" href="../style.css">
+		<title>Task 5</title>
+	</head>
+	<body style="padding: 30px;">
+		<h1 class="body__title">Задача № 5</h1> 
+		<p class="body__condition" style="margin-bottom: 50px;">
+			Дано масив цін у грн. 
+			Податок складає 20%. 
+			Сформувати масив, який буде містити величину сплаченого податку у грн.
+		</p>
+		<script>
+			let prices = [2000,350,500,4500,7600]
+			const tax = 20
+
+			let taxPaid = Array.from(
+				prices, (element) => element*(tax/100) 
+			)
+			document.write(`Масив, який містить величину сплаченого податку: ${taxPaid}<br> `)
+
+			function totalTax(taxPaid) {
+				let totalTaxSum = 0
+				for (let i = 0; i < taxPaid.length; i++) {
+					totalTaxSum += taxPaid[i]
+				}
+				return totalTaxSum
+			}
+			let totalSumTax = totalTax(taxPaid)
+			document.write(`Загальна сума сплаченого податку за всі товари складає: ${totalSumTax} грн`)
+		</script>
+	</body>
+</html>
