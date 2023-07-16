@@ -20,9 +20,9 @@
 			const tax = 20
 
 			let taxPaid = Array.from(
-				prices, (element) => element*(tax/100) 
+				prices, (element) => element*(tax/100)
 			)
-			document.write(`Масив, який містить величину сплаченого податку: ${taxPaid}<br> `)
+			document.write(`Масив, який містить величину сплаченого податку, грн: ${taxPaid}<br> `)
 
 			function totalTax(taxPaid) {
 				let totalTaxSum = 0
@@ -31,6 +31,7 @@
 				}
 				return totalTaxSum
 			}
+
 			let totalSumTax = totalTax(taxPaid)
 			document.write(`Загальна сума сплаченого податку за всі товари складає: ${totalSumTax} грн`)
 		</script>
