@@ -35,7 +35,7 @@
 			document.write(`2). Новий масив, у якому є номери тільки тих, що більші за 1000 грн.:  ${indexPriceNumber} <br>`)
 
 			// 3). Сформувати список з тих цін, які більші за попереднє значення
-				let pricesAreGreaterThanThePreviousValue = priceHistory.filter((price,index,priceHistory) => price > priceHistory[index-1])
+				let pricesAreGreaterThanThePreviousValue = priceHistory.filter((price,index,priceHistory) => price > priceHistory[index-1], 0)
 				document.write(`3). Список цін, які більші за попереднє значення: ${pricesAreGreaterThanThePreviousValue} <br>`)
 
 			// 4). Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
