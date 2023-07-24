@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../reset.css">
+		<link rel="stylesheet" href="../style.css">
+		<title>Task 2</title>
+	</head>
+	<body style="padding: 30px;">
+		<h1 class="body__title">Задача № 2</h1> 
+		<p class="body__condition" style="margin-bottom: 50px;">
+			Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування змішуванням.
+		</p>
+		<script>
+			// Генерування 30 випадкових чисел
+			let RandomWholeNumbers = []
+			for(let i = 0; i < 30; i++){
+				RandomWholeNumbers.push(Math.floor(Math.random() * 100) + 1);
+			}
+			document.write(`Масив який згенерувався :${RandomWholeNumbers}<br>`)
+			
+			// Сортування методом змішування
+
+			// Функція, яка виконує обмін двох елементів масиву
+			const swap = (RandomWholeNumbers, i, j) => {
+				const prevArr = RandomWholeNumbers[i]
+				RandomWholeNumbers[i] = RandomWholeNumbers[j]
+				RandomWholeNumbers[j] = prevArr
+			}
+
+			function shakerSort(RandomWholeNumbers){
+				let counter = 0
+				let leftIndex = 0
+				let rightIndex = RandomWholeNumbers.length - 1
+				while (leftIndex < rightIndex) {
+					for (let i = leftIndex; i < rightIndex; i++) {
+						if (RandomWholeNumbers[i] > RandomWholeNumbers[i + 1]){
+							swap(RandomWholeNumbers, i, i+1)
+						}
+					}
+					rightIndex--
+					for (let i = rightIndex; i > leftIndex; i--) {
+						if (RandomWholeNumbers[i] < RandomWholeNumbers[i - 1]){
+							swap(RandomWholeNumbers, i, i-1)
+						}
+					}
+					leftIndex++
+					counter++
+				}
+				return counter
+			}
+			let totalCounter = shakerSort(RandomWholeNumbers)
+			document.write(`Масив відсортований методом "змішування" :${RandomWholeNumbers}<br>`)
+			document.write(`Кількість обмінів складає :${totalCounter}<br>`)
+		</script>
+	</body>
+</html>

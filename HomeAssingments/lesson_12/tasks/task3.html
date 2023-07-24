@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../reset.css">
+		<link rel="stylesheet" href="../style.css">
+		<title>Task 3</title>
+	</head>
+	<body style="padding: 30px;">
+		<h1 class="body__title">Задача № 3</h1> 
+		<p class="body__condition" style="margin-bottom: 50px;">
+			Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування включеннями.
+		</p>
+		<script>
+			// Генерування 30 випадкових чисел
+			let RandomWholeNumbers = []
+			for(let i = 0; i < 30; i++){
+				RandomWholeNumbers.push(Math.floor(Math.random() * 100) + 1);
+			}
+			document.write(`Масив який згенерувався :${RandomWholeNumbers}<br>`)
+			
+			// Сортування методом включення
+			let counter = 0
+			function insertnSort(RandomWholeNumbers) {
+				for (let k = 1; k < RandomWholeNumbers.length; k++) {
+					const temp = RandomWholeNumbers[k];
+					let i = k - 1;
+					while (i >= 0 && RandomWholeNumbers[i] > temp) {
+						RandomWholeNumbers[i + 1] = RandomWholeNumbers[i];
+						i--;
+					}
+					RandomWholeNumbers[i + 1] = temp;
+					counter++
+				}
+				return counter;
+			}
+
+			let totalCounter = insertnSort(RandomWholeNumbers)
+			document.write(`Масив відсортований методом "включення" :${RandomWholeNumbers}<br>`)
+			document.write(`Кількість обмінів складає :${totalCounter}<br>`)
+		</script>
+	</body>
+</html>

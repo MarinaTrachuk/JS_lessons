@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../reset.css">
+		<link rel="stylesheet" href="../style.css">
+		<title>Task 1</title>
+	</head>
+	<body style="padding: 30px;">
+		<h1 class="body__title">Задача № 1</h1> 
+		<p class="body__condition" style="margin-bottom: 50px;">
+			Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування бульбашкою
+		</p>
+		<script>
+			// Генерування 30 випадкових чисел
+			let RandomWholeNumbers = []
+			for(let i = 0; i < 30; i++){
+				RandomWholeNumbers.push(Math.floor(Math.random() * 100) + 1);
+			}
+			document.write(`Масив який згенерувався :${RandomWholeNumbers}<br>`)
+			// Сортування методом бульбашка
+			let counter = 0
+			let changes
+			do {
+				changes = false
+				for (let i = 0; i < RandomWholeNumbers.length; i++) {
+					if(RandomWholeNumbers[i-1] > RandomWholeNumbers[i]){
+						let temp = RandomWholeNumbers[i-1]
+						RandomWholeNumbers[i-1] = RandomWholeNumbers[i]
+						RandomWholeNumbers[i] = temp
+						changes = true
+						counter++
+					}
+				}
+			} while (changes);
+			document.write(`Масив відсортований методом "бульбашка" :${RandomWholeNumbers}<br>`)
+			document.write(`Кількість обмінів складає :${counter}<br>`)
+		</script>
+	</body>
+</html>
