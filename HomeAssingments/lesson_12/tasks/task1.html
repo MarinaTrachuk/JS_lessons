@@ -15,27 +15,27 @@
 		</p>
 		<script>
 			// Генерування 30 випадкових чисел
-			let RandomWholeNumbers = []
+			let randomWholeNumbers = []
 			for(let i = 0; i < 30; i++){
-				RandomWholeNumbers.push(Math.floor(Math.random() * 100) + 1);
+				randomWholeNumbers.push(Math.floor(Math.random() * 100) + 1);
 			}
-			document.write(`Масив який згенерувався :${RandomWholeNumbers}<br>`)
+			document.write(`Масив який згенерувався :${randomWholeNumbers}<br>`)
 			// Сортування методом бульбашка
 			let counter = 0
 			let changes
 			do {
 				changes = false
-				for (let i = 0; i < RandomWholeNumbers.length; i++) {
-					if(RandomWholeNumbers[i-1] > RandomWholeNumbers[i]){
-						let temp = RandomWholeNumbers[i-1]
-						RandomWholeNumbers[i-1] = RandomWholeNumbers[i]
-						RandomWholeNumbers[i] = temp
+				for (let i = 1; i < randomWholeNumbers.length; i++) {
+					if(randomWholeNumbers[i-1] > randomWholeNumbers[i]){
+						let temp = randomWholeNumbers[i-1]
+						randomWholeNumbers[i-1] = randomWholeNumbers[i]
+						randomWholeNumbers[i] = temp
 						changes = true
 						counter++
 					}
 				}
 			} while (changes);
-			document.write(`Масив відсортований методом "бульбашка" :${RandomWholeNumbers}<br>`)
+			document.write(`Масив відсортований методом "бульбашка" :${randomWholeNumbers}<br>`)
 			document.write(`Кількість обмінів складає :${counter}<br>`)
 		</script>
 	</body>

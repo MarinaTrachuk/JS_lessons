@@ -15,44 +15,45 @@
 		</p>
 		<script>
 			// Генерування 30 випадкових чисел
-			let RandomWholeNumbers = []
+			let randomWholeNumbers = []
 			for(let i = 0; i < 30; i++){
-				RandomWholeNumbers.push(Math.floor(Math.random() * 100) + 1);
+				randomWholeNumbers.push(Math.floor(Math.random() * 100) + 1);
 			}
-			document.write(`Масив який згенерувався :${RandomWholeNumbers}<br>`)
+			document.write(`Масив який згенерувався :${randomWholeNumbers}<br>`)
 			
 			// Сортування методом змішування
 
 			// Функція, яка виконує обмін двох елементів масиву
-			const swap = (RandomWholeNumbers, i, j) => {
-				const prevArr = RandomWholeNumbers[i]
-				RandomWholeNumbers[i] = RandomWholeNumbers[j]
-				RandomWholeNumbers[j] = prevArr
+			const swap = (randomWholeNumbers, i, j) => {
+				const prevArr = randomWholeNumbers[i]
+				randomWholeNumbers[i] = randomWholeNumbers[j]
+				randomWholeNumbers[j] = prevArr
 			}
 
-			function shakerSort(RandomWholeNumbers){
-				let counter = 0
+			function shakerSort(randomWholeNumbers){
+				let swaps = 0
 				let leftIndex = 0
-				let rightIndex = RandomWholeNumbers.length - 1
+				let rightIndex = randomWholeNumbers.length - 1
 				while (leftIndex < rightIndex) {
 					for (let i = leftIndex; i < rightIndex; i++) {
-						if (RandomWholeNumbers[i] > RandomWholeNumbers[i + 1]){
-							swap(RandomWholeNumbers, i, i+1)
+						if (randomWholeNumbers[i] > randomWholeNumbers[i + 1]){
+							swap(randomWholeNumbers, i, i+1)
 						}
 					}
 					rightIndex--
+					swaps++
 					for (let i = rightIndex; i > leftIndex; i--) {
-						if (RandomWholeNumbers[i] < RandomWholeNumbers[i - 1]){
-							swap(RandomWholeNumbers, i, i-1)
+						if (randomWholeNumbers[i] < randomWholeNumbers[i - 1]){
+							swap(randomWholeNumbers, i, i-1)
 						}
 					}
 					leftIndex++
-					counter++
+					swaps++
 				}
-				return counter
+				return swaps
 			}
-			let totalCounter = shakerSort(RandomWholeNumbers)
-			document.write(`Масив відсортований методом "змішування" :${RandomWholeNumbers}<br>`)
+			let totalCounter = shakerSort(randomWholeNumbers)
+			document.write(`Масив відсортований методом "змішування" :${randomWholeNumbers}<br>`)
 			document.write(`Кількість обмінів складає :${totalCounter}<br>`)
 		</script>
 	</body>
